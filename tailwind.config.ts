@@ -1,7 +1,29 @@
-import type { Config } from 'tailwindcss'
-const config: Config = {
-  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}','./components/**/*.{js,ts,jsx,tsx,mdx}'],
-  theme: { extend: { colors: { brand: {50:'#eef7ff',100:'#d8ebff',200:'#b8d9ff',300:'#8ec2ff',400:'#5aa4ff',500:'#2a83ff',600:'#1d65db',700:'#1a52b4',800:'#1a4591',900:'#1a3a78'},}, boxShadow:{soft:'0 10px 30px rgba(0,0,0,0.08)'} } },
-  plugins: [],
-}
-export default config
+import type { Config } from 'tailwindcss';
+
+export default {
+  content: [
+    './app/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './content/**/*.{md,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          50:  '#eef7ff',
+          100: '#d8ecff',
+          200: '#b7dbff',
+          300: '#8cc4ff',
+          400: '#5aa7ff',
+          500: '#2a86ff',
+          600: '#1868db',
+          700: '#1453af',
+          800: '#123f84',
+          900: '#102f63',
+        },
+        accent: { 500: '#16a34a' },
+      },
+    },
+  },
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+} satisfies Config;

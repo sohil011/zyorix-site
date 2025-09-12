@@ -1,28 +1,52 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
+import './globals.css';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
+
+const siteUrl = 'https://zyorix.com';
+const siteName = 'Zyorix';
+const siteTitle = 'Zyorix | FinOps Consulting for Cloud Cost Optimization';
+const siteDescription =
+  'Independent UK FinOps consultancy. Cut 20–40% cloud spend without buying new tools. AWS • Azure • GCP. FOCP & FOCUS certified.';
+
+export const viewport: Viewport = {
+  themeColor: '#102f63',
+  colorScheme: 'light',
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://zyorix.com'),
-  title: { default: 'Zyorix | FinOps Consulting for Cloud Cost Optimization', template: '%s | Zyorix' },
-  description: 'FOCP & FOCUS-aligned FinOps consultancy helping AWS, Azure, and GCP teams cut cloud waste, improve allocation, and grow margin—without new tools.',
-  openGraph: { title: 'Zyorix | FinOps Consulting', description: 'FOCP & FOCUS-aligned FinOps consultancy helping AWS, Azure, and GCP teams cut cloud waste and grow margin.', url: 'https://zyorix.com', siteName: 'Zyorix', type: 'website' },
-  robots: { index: true, follow: true }, icons: { icon: '/favicon.ico' },
-}
+  metadataBase: new URL(siteUrl),
+  title: { default: siteTitle, template: '%s | Zyorix' },
+  description: siteDescription,
+  alternates: { canonical: siteUrl },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+    images: [{ url: '/og/og-home.jpg', width: 1200, height: 630, alt: 'Zyorix FinOps Consulting' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/og/og-home.jpg'],
+  },
+  robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: '/favicon.ico' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    other: [{ rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#102f63' }],
+  },
+  category: 'technology',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context":"https://schema.org","@type":"Organization","name":"Zyorix","url":"https://zyorix.com","logo":"https://zyorix.com/zyorix-logo.svg","sameAs":[] }) }}
-        />
-      </body>
+    <html lang="en" className={inter.variable}>
+      <body className="min-h-dvh bg-white text-gray-900 antialiased">{children}</body>
     </html>
-  )
+  );
 }

@@ -1,1 +1,101 @@
-import Link from 'next/link'; export function Hero(){return(<section className='relative overflow-hidden bg-gradient-to-b from-slate-50 to-white'><div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24'><div className='grid lg:grid-cols-2 gap-10 items-center'><div><div className='inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-emerald-700 text-xs font-medium ring-1 ring-emerald-200'>FOCP & FOCUS Certified</div><h1 className='mt-5 text-4xl/tight sm:text-5xl/tight font-semibold'>Cut <span className='text-brand-700'>15–35%</span> cloud spend in 6 weeks — no new tools.</h1><p className='mt-4 text-lg text-slate-700 max-w-2xl'>Zyorix helps engineering and finance teams reduce cloud waste, improve allocation, and scale governance across AWS, Azure, and GCP. We turn CUR and billing data into actions tied to unit economics.</p><div className='mt-8 flex flex-col sm:flex-row gap-3'><Link href='/contact' className='inline-flex items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-white font-medium shadow-soft hover:bg-brand-700'>Book a discovery call</Link><Link href='/case-studies' className='inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium ring-1 ring-slate-300 hover:bg-slate-50'>See case studies</Link></div><p className='mt-4 text-xs text-slate-500'>Typical wins: rightsizing & scheduling, gp2→gp3, S3 lifecycle, SP/RI coverage, anomaly guardrails.</p></div><div className='relative'><div className='rounded-3xl border bg-white p-6 shadow-soft'><ul className='grid grid-cols-2 gap-4 text-sm'><li className='p-4 rounded-xl bg-slate-50'><p className='font-semibold'>Health Check</p><p className='text-slate-600'>2–3 week assessment with quantified backlog.</p></li><li className='p-4 rounded-xl bg-slate-50'><p className='font-semibold'>Allocation & KPIs</p><p className='text-slate-600'>Owner/Project/Env tags, untagged %, unit cost.</p></li><li className='p-4 rounded-xl bg-slate-50'><p className='font-semibold'>Optimization Sprint</p><p className='text-slate-600'>Compute, storage, data transfer focus.</p></li><li className='p-4 rounded-xl bg-slate-50'><p className='font-semibold'>vFinOps</p><p className='text-slate-600'>Budgets/alerts and governance cadence.</p></li></ul></div></div></div></div></section>)}
+// components/Hero.tsx
+import Link from "next/link";
+
+export default function Hero() {
+  return (
+    <section className="relative isolate bg-gradient-to-r from-white via-gray-50 to-blue-50">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-6 lg:py-24">
+        {/* Badge */}
+        <span
+          aria-label="Certified in FinOps (FOCP & FOCUS)"
+          className="inline-block rounded-full bg-emerald-200 px-4 py-1.5 text-sm font-semibold text-emerald-900 shadow-sm"
+        >
+          FOCP & FOCUS Certified
+        </span>
+
+        {/* Headline */}
+        <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-gray-900 sm:mt-6 sm:text-5xl">
+          Cut <span className="text-blue-700">15–35%</span> cloud spend in 6 weeks — no new tools.
+        </h1>
+
+        {/* Subcopy (split for clarity) */}
+        <p className="mt-5 max-w-2xl text-base text-gray-700 sm:text-lg">
+          Zyorix helps engineering and finance teams reduce cloud waste, improve allocation, and
+          scale governance across AWS, Azure, and GCP.
+        </p>
+        <p className="mt-2 max-w-2xl text-base text-gray-700 sm:text-lg">
+          We turn CUR and billing data into actions tied directly to unit economics.
+        </p>
+
+        {/* CTAs */}
+        <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-xl bg-blue-700 px-5 py-3 text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+          >
+            Book a discovery call
+          </Link>
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center rounded-xl border border-gray-300 px-5 py-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+          >
+            See case studies
+          </Link>
+        </div>
+
+        {/* Typical wins */}
+        <p className="mt-4 max-w-2xl text-sm leading-snug text-gray-600 sm:mt-5">
+          Typical wins: rightsizing & scheduling, gp2→gp3, S3 lifecycle, SP/RI coverage, anomaly guardrails.
+        </p>
+
+        {/* Services */}
+        <h2 className="sr-only">Our Services</h2>
+        <div className="mt-6 sm:mt-10 lg:mt-14">
+          <div className="rounded-2xl border border-gray-200 bg-white/70 p-3 shadow-sm backdrop-blur-sm sm:p-5 lg:p-8">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+              <a
+                href="/services/health-check"
+                className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+              >
+                <h3 className="font-semibold text-gray-900">Health Check</h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  2–3 week assessment with quantified backlog.
+                </p>
+              </a>
+
+              <a
+                href="/services/allocation-governance"
+                className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+              >
+                <h3 className="font-semibold text-gray-900">Allocation & KPIs</h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  Owner/Project/Env tags, untagged %, unit cost.
+                </p>
+              </a>
+
+              <a
+                href="/services/optimization"
+                className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+              >
+                <h3 className="font-semibold text-gray-900">Optimization Sprint</h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  Compute, storage, data transfer focus.
+                </p>
+              </a>
+
+              <a
+                href="/services/managed"
+                className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+              >
+                <h3 className="font-semibold text-gray-900">vFinOps</h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  Budgets/alerts and governance cadence.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

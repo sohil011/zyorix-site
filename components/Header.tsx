@@ -18,26 +18,25 @@ export function Header() {
         className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          {/* Logo: decorative inside an already-labeled link (avoid redundant alt) */}
+          {/* Logo (SVG wordmark) */}
           <Link href="/" aria-label="Zyorix Home" className="flex items-center">
             <Image
               src="/zyorix-logo.svg"
-              alt=""                // decorative – link already has accessible name
+              alt=""                // decorative – link already names destination
               width={112}
               height={24}
-              priority
               aria-hidden="true"
             />
           </Link>
 
-          {/* Nav: touch targets ≥44px via px-3 py-2 (no visual change) */}
+          {/* Nav: disable prefetch to reduce JS/TBT on initial load */}
           <nav role="navigation" aria-label="Main navigation" className="flex gap-1 text-sm font-medium">
-            <Link href="/services" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Services</Link>
-            <Link href="/pricing" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Pricing</Link>
-            <Link href="/case-studies" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Case Studies</Link>
-            <Link href="/about" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">About</Link>
-            <Link href="/blog" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Blog</Link>
-            <Link href="/contact" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Contact</Link>
+            <Link prefetch={false} href="/services" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Services</Link>
+            <Link prefetch={false} href="/pricing" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Pricing</Link>
+            <Link prefetch={false} href="/case-studies" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Case Studies</Link>
+            <Link prefetch={false} href="/about" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">About</Link>
+            <Link prefetch={false} href="/blog" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Blog</Link>
+            <Link prefetch={false} href="/contact" className="rounded-md px-3 py-2 text-gray-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">Contact</Link>
           </nav>
         </div>
       </header>

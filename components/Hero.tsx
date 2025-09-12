@@ -18,7 +18,7 @@ export default function Hero() {
           Cut <span className="text-blue-700">15–35%</span> cloud spend in 6 weeks — no new tools.
         </h1>
 
-        {/* Subcopy (split for clarity) */}
+        {/* Subcopy */}
         <p className="mt-5 max-w-2xl text-base text-gray-700 sm:text-lg">
           Zyorix helps engineering and finance teams reduce cloud waste, improve allocation, and
           scale governance across AWS, Azure, and GCP.
@@ -27,15 +27,15 @@ export default function Hero() {
           We turn CUR and billing data into actions tied directly to unit economics.
         </p>
 
-        {/* CTAs */}
+        {/* CTAs (prefetch disabled) */}
         <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
-          <Link
+          <Link prefetch={false}
             href="/contact"
             className="inline-flex items-center rounded-xl bg-blue-700 px-5 py-3 text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
           >
             Book a discovery call
           </Link>
-          <Link
+          <Link prefetch={false}
             href="/case-studies"
             className="inline-flex items-center rounded-xl border border-gray-300 px-5 py-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
           >

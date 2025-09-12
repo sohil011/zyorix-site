@@ -1,0 +1,1 @@
+import type { MetadataRoute } from 'next'; export default function sitemap():MetadataRoute.Sitemap{const b='https://zyorix.com';const p=['','/services','/pricing','/case-studies','/about','/blog','/contact','/legal/privacy','/legal/cookies'];return p.map(x=>({url:b+x,lastModified:new Date()}))}

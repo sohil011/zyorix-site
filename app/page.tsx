@@ -1,5 +1,5 @@
 // app/page.tsx
-import { Header } from "../components/Header";
+Header is rendered by app/layout.tsx
 import Hero from "../components/Hero";
 import { Footer } from "../components/Footer";
 

@@ -1,28 +1,37 @@
+// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: { optimizePackageImports: ['lucide-react'] },
+  poweredByHeader: false,
+  swcMinify: true,
+
+  // Stop the browser from fetching *.map files in production (cleans Lighthouse “console errors”)
+  productionBrowserSourceMaps: false,
+
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      { protocol: 'https', hostname: 'zyorix.com' },
-      { protocol: 'https', hostname: 'images.ctfassets.net' },
-    ],
+    domains: [], // add domains if you load remote images later
   },
-  eslint: { ignoreDuringBuilds: false },
-  typescript: { ignoreBuildErrors: false },
+
+  async redirects() {
+    return [
+      { source: '/case-study', destination: '/case-studies', permanent: true },
+    ];
+  },
+
+  async rewrites() {
+    return [];
+  },
+
   async headers() {
     return [
       {
-        source: '/og/:path*',
+        source: '/(.*)',
         headers: [
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-        ],
-      },
-      {
-        source: '/:file(svg|png|jpg|jpeg|gif|webp|avif)',
-        headers: [
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
       },
     ];

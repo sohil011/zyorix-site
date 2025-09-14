@@ -1,89 +1,88 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 
-const title = "What is a FinOps Health Check?";
-const description =
-  "A fast baseline across spend, tagging, KPIs, and anomalies. Deliverables: findings deck, KPI snapshot, and a prioritized savings plan with confidence scores.";
-
-export const metadata = {
-  title: `${title} | Zyorix — FinOps Consulting`,
-  description,
+export const metadata: Metadata = {
+  title: "Why a FinOps Health Check is Your Best First Step | Zyorix",
+  description:
+    "Get a baseline across spend, tagging, KPIs and anomalies. See top savings with impact & confidence, and a 30/60/90 plan to execute.",
   alternates: { canonical: "/blog/finops-health-check" },
   openGraph: {
-    title,
-    description,
+    title: "Why a FinOps Health Check is Your Best First Step",
+    description:
+      "Baseline, KPIs, anomaly review, and a prioritized savings plan—fast.",
     url: "https://zyorix.com/blog/finops-health-check",
-    siteName: "Zyorix",
     type: "article",
+    siteName: "Zyorix",
   },
-  robots: { index: true, follow: true },
 };
 
-export default function PostPage() {
+export default function ArticlePage() {
   return (
-    <main id="main" className="prose prose-neutral mx-auto max-w-3xl px-4 py-12 dark:prose-invert sm:py-16">
-      <nav aria-label="Breadcrumb" className="mb-6 text-sm not-prose text-neutral-600 dark:text-neutral-300">
-        <ol className="flex flex-wrap gap-2">
+    <main id="main" className="mx-auto max-w-3xl px-4 py-12 prose dark:prose-invert">
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-neutral-600 dark:text-neutral-400">
+        <ol className="flex gap-2">
           <li><Link href="/" className="underline underline-offset-2 hover:no-underline">Home</Link></li>
           <li aria-hidden="true">/</li>
           <li><Link href="/blog" className="underline underline-offset-2 hover:no-underline">Blog</Link></li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-neutral-900 dark:text-white">{title}</li>
+          <li className="text-neutral-900 dark:text-white">FinOps Health Check</li>
         </ol>
       </nav>
 
-      <header className="not-prose">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
-        <p className="mt-3 max-w-2xl text-neutral-700 dark:text-neutral-300">{description}</p>
-        <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-          <time dateTime="2025-09-14">Sep 14, 2025</time>
+      <header className="mb-4">
+        <h1>Why a FinOps Health Check is Your Best First Step</h1>
+        <p className="mt-2 text-neutral-600 dark:text-neutral-300">
+          Get a baseline across spend, tagging, KPIs and anomalies. See top savings with impact &amp;
+          confidence, plus a 30/60/90 plan your teams can execute.
         </p>
       </header>
 
-      <hr className="my-6 border-neutral-200 dark:border-neutral-800 not-prose" />
+      <p>
+        Most teams jump straight to rightsizing and schedules. Those matter, but without a clear baseline,
+        KPI targets, and anomaly hygiene, savings stall. A focused Health Check creates shared visibility,
+        aligns stakeholders, and prioritizes work with confidence scores.
+      </p>
 
-      <section>
-        <h2>Why start with a Health Check?</h2>
-        <p>
-          It de-risks optimization by creating a shared baseline and a ranked backlog. You see KPIs,
-          savings potential, and confidence before committing engineering time.
-        </p>
+      <h2>What you get</h2>
+      <ul>
+        <li>Findings deck: spend shape, hotspots, and anomalies</li>
+        <li>KPI snapshot: coverage, unit economics, savings runway</li>
+        <li>Top 10 savings with impact &amp; confidence</li>
+        <li>30/60/90 plan with owners and guardrails</li>
+      </ul>
 
-        <h3>What you get</h3>
-        <ul>
-          <li>Findings deck and KPI snapshot (spend, unit economics, anomalies)</li>
-          <li>Top 10 savings with impact & confidence scores</li>
-          <li>30/60/90 optimization plan and guardrails</li>
-        </ul>
+      <h2>Why it works</h2>
+      <p>
+        It’s <em>time-boxed</em> and <em>outcomes-first</em>. We use your existing tools (no vendor lock-in),
+        read-only access where possible, and we operate transparently. You get clarity within 2–3 weeks.
+      </p>
 
-        <h3>How long it takes</h3>
-        <p>Typically 2–3 weeks, depending on account size and access.</p>
-      </section>
-
-      <aside className="not-prose mt-8 rounded-2xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-900/40 dark:bg-blue-950/30">
-        <p className="text-neutral-900 dark:text-white">
-          Ready to baseline and prioritize savings?{" "}
-          <Link href="/services/health-check" className="underline underline-offset-2 hover:no-underline">
-            Start a FinOps Health Check
-          </Link>{" "}
-          or{" "}
-          <Link href="/contact" className="underline underline-offset-2 hover:no-underline">
-            book a call
-          </Link>
-          .
-        </p>
-      </aside>
+      <div className="not-prose mt-8 flex flex-wrap gap-3">
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          aria-label="Book a Health Check call"
+        >
+          Book a call
+        </Link>
+        <Link
+          href="/services/health-check"
+          className="inline-flex items-center justify-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-neutral-700 dark:hover:bg-neutral-800"
+          aria-label="See Health Check scope"
+        >
+          See scope
+        </Link>
+      </div>
 
       <Script id="ld-article" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: title,
-          description,
-          datePublished: "2025-09-14",
+          headline: "Why a FinOps Health Check is Your Best First Step",
+          url: "https://zyorix.com/blog/finops-health-check",
           author: { "@type": "Organization", name: "Zyorix" },
-          publisher: { "@type": "Organization", name: "Zyorix" },
-          mainEntityOfPage: { "@type": "WebPage", "@id": "https://zyorix.com/blog/finops-health-check" },
+          publisher: { "@type": "Organization", name: "Zyorix", url: "https://zyorix.com" },
         })}
       </Script>
     </main>

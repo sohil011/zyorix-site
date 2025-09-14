@@ -1,52 +1,26 @@
-import './globals.css';
-import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
-
-const siteUrl = 'https://zyorix.com';
-const siteName = 'Zyorix';
-const siteTitle = 'Zyorix | FinOps Consulting for Cloud Cost Optimization';
-const siteDescription =
-  'Independent UK FinOps consultancy. Cut 20–40% cloud spend without buying new tools. AWS • Azure • GCP. FOCP & FOCUS certified.';
-
-export const viewport: Viewport = {
-  themeColor: '#102f63',
-  colorScheme: 'light',
-};
+// app/layout.tsx
+import "./globals.css";
+import type { Metadata } from "next";
+import Header from "../components/Header";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: { default: siteTitle, template: '%s | Zyorix' },
-  description: siteDescription,
-  alternates: { canonical: siteUrl },
-  openGraph: {
-    type: 'website',
-    url: siteUrl,
-    siteName,
-    title: siteTitle,
-    description: siteDescription,
-    images: [{ url: '/og/og-home.jpg', width: 1200, height: 630, alt: 'Zyorix FinOps Consulting' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteTitle,
-    description: siteDescription,
-    images: ['/og/og-home.jpg'],
-  },
-  robots: { index: true, follow: true },
-  icons: {
-    icon: [{ url: '/favicon.ico' }],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
-    other: [{ rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#102f63' }],
-  },
-  category: 'technology',
+  title: { default: "Zyorix — FinOps Consulting", template: "%s | Zyorix" },
+  description:
+    "Zyorix helps teams cut cloud waste, align spend to value, and operationalize FinOps.",
+  metadataBase: new URL("https://zyorix.com"),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="min-h-dvh bg-white text-gray-900 antialiased">{children}</body>
+    <html lang="en" className="h-full">
+      <body className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-white">
+        <Header />
+        <main id="main">{children}</main>
+      </body>
     </html>
   );
 }

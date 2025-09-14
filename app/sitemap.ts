@@ -1,42 +1,46 @@
 ﻿import type { MetadataRoute } from "next";
 
+export const revalidate = 0; // no cache for sitemap
+
 const base = "https://zyorix.com";
 
-/**
- * Keep this list in sync with your public routes.
- * Do NOT include feeds or non-HTML endpoints (e.g., /rss.xml).
- */
-const pages: Array<{ loc: string; priority?: number; changefreq?: MetadataRoute.Sitemap[number]["changeFrequency"] }> = [
-  { loc: "/", priority: 1.0, changefreq: "weekly" },
+const pages: Array<{ loc: string; lastModified?: string | Date; priority?: number; changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"] }> = [
+  // Core
+  { loc: "/", priority: 1.0, changeFrequency: "weekly" },
+  { loc: "/about", priority: 0.6, changeFrequency: "yearly" },
+  { loc: "/services", priority: 0.9, changeFrequency: "monthly" },
+  { loc: "/pricing", priority: 0.9, changeFrequency: "monthly" },
+  { loc: "/case-studies", priority: 0.8, changeFrequency: "monthly" },
+  { loc: "/contact", priority: 0.8, changeFrequency: "yearly" },
+  { loc: "/privacy", priority: 0.3, changeFrequency: "yearly" },
+  { loc: "/terms", priority: 0.3, changeFrequency: "yearly" },
 
-  // Top-level pages
-  { loc: "/services", priority: 0.9, changefreq: "monthly" },
-  { loc: "/pricing", priority: 0.9, changefreq: "monthly" },
-  { loc: "/case-studies", priority: 0.8, changefreq: "monthly" },
-  { loc: "/blog", priority: 0.7, changefreq: "weekly" },
-  { loc: "/about", priority: 0.6, changefreq: "yearly" },
-  { loc: "/contact", priority: 0.8, changefreq: "yearly" },
-  { loc: "/privacy", priority: 0.3, changefreq: "yearly" },
-  { loc: "/terms", priority: 0.3, changefreq: "yearly" },
+  // Services detail
+  { loc: "/services/health-check", priority: 0.7, changeFrequency: "monthly" },
+  { loc: "/services/optimization", priority: 0.7, changeFrequency: "monthly" },
+  { loc: "/services/managed-finops", priority: 0.7, changeFrequency: "monthly" },
+  { loc: "/services/allocation-governance", priority: 0.7, changeFrequency: "monthly" },
 
-  // Service detail pages
-  { loc: "/services/health-check", priority: 0.7, changefreq: "monthly" },
-  { loc: "/services/optimization", priority: 0.7, changefreq: "monthly" },
-  { loc: "/services/managed-finops", priority: 0.7, changefreq: "monthly" },
+  // Case studies
+  { loc: "/case-studies/saas-scaleup-28-savings", priority: 0.6, changeFrequency: "yearly" },
 
-  // Case studies (add more as you publish)
-  { loc: "/case-studies/saas-scaleup-28-savings", priority: 0.6, changefreq: "yearly" },
+  // Blog hub + posts
+  { loc: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { loc: "/blog/finops-health-check", priority: 0.6, changeFrequency: "yearly" },
+  { loc: "/blog/finops-health-check-90-day-plan", priority: 0.6, changeFrequency: "yearly" },
+  { loc: "/blog/cloud-cost-myths-busted", priority: 0.6, changeFrequency: "yearly" },
 
-  // Blog posts (add more as you publish)
-  { loc: "/blog/finops-health-check", priority: 0.6, changefreq: "yearly" },
+  // Legal (Next build surfaced /legal/* too)
+  { loc: "/legal/cookies", priority: 0.3, changeFrequency: "yearly" },
+  { loc: "/legal/privacy", priority: 0.3, changeFrequency: "yearly" }
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return pages.map((p) => ({
+  return pages.map(p => ({
     url: `${base}${p.loc}`,
-    lastModified: now,
-    changeFrequency: p.changefreq ?? "monthly",
-    priority: p.priority ?? 0.5,
+    lastModified: p.lastModified ?? now,
+    changeFrequency: p.changeFrequency ?? "monthly",
+    priority: p.priority ?? 0.5
   }));
 }

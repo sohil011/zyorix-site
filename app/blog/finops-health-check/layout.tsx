@@ -1,4 +1,4 @@
-﻿export default function BlogPostLayout({ children }: { children: React.ReactNode }) {
+﻿export default function Layout({ children }: { children: React.ReactNode }) {
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -10,14 +10,12 @@
   };
 
   return (
-    <html lang="en">
-      <body>
-        {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-        />
-      </body>
-    </html>
+    <>
+      {children}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+    </>
   );
 }

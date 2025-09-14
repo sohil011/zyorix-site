@@ -1,4 +1,4 @@
-// app/layout.tsx
+﻿// app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Zyorix | FinOps Consulting for Cloud Cost Optimization",
   description:
-    "Cut 20–40% of your cloud spend in weeks. Zyorix provides independent UK FinOps consulting for AWS, Azure, and GCP.",
+    "Cut 20â€“40% of your cloud spend in weeks. Zyorix provides independent UK FinOps consulting for AWS, Azure, and GCP.",
   metadataBase: new URL("https://zyorix.com"),
   openGraph: {
     title: "Zyorix | FinOps Consulting",
@@ -55,16 +55,16 @@ export default function RootLayout({
         <main>{children}</main>
 
         <footer className="site-footer py-6 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Zyorix. All rights reserved.</p>
+          <p>Â© {new Date().getFullYear()} Zyorix. All rights reserved.</p>
           <p>
             <Link href="/privacy" className="underline">
               Privacy
             </Link>{" "}
-            ·{" "}
+            Â·{" "}
             <Link href="/legal/cookies" className="underline">
               Cookies
             </Link>{" "}
-            ·{" "}
+            Â·{" "}
             <Link href="/terms" className="underline">
               Terms
             </Link>
@@ -77,3 +77,4 @@ export default function RootLayout({
     </html>
   );
 }
+

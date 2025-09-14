@@ -1,10 +1,13 @@
-import type { MetadataRoute } from 'next';
+﻿import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = 'https://zyorix.com';
+  const base = "https://zyorix.com";
   return {
-    rules: [{ userAgent: '*', allow: '/' }],
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
     sitemap: `${base}/sitemap.xml`,
-    host: 'zyorix.com',
+    host: base,
   };
 }

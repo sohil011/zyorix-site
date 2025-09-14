@@ -1,27 +1,39 @@
-import type { MetadataRoute } from 'next';
+﻿import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://zyorix.com';
-  const routes = [
-    '',
-    '/services',
-    '/services/health-check',
-    '/services/optimization',
-    '/services/allocation-governance',
-    '/services/managed',
-    '/pricing',
-    '/case-studies',
-    '/about',
-    '/contact',
-    '/blog',
-    '/privacy',
-  ];
-  const now = new Date().toISOString();
+  const base = "https://zyorix.com";
+  const now = new Date();
 
-  return routes.map((path) => ({
-    url: `${base}${path}`,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: path === '' ? 1 : 0.7,
-  }));
+  const paths = [
+    "",
+
+    // Services hub + subpages
+    "services",
+    "services/health-check",
+    "services/optimization",
+    "services/allocation-governance",
+    "services/managed-finops",
+
+    // Core pages
+    "pricing",
+    "case-studies",
+    "case-studies/saas-scaleup-28-savings",
+    "about",
+    "contact",
+    "blog",
+
+    // Legal
+    "privacy",
+    "terms",
+  ];
+
+  return paths.map((p) => {
+    const url = p ? `${base}/${p}` : base;
+    return {
+      url,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: p === "" ? 1 : 0.7,
+    };
+  });
 }

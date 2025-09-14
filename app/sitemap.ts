@@ -7,20 +7,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
 
-    // Services hub + subpages
+    // Services
     "services",
     "services/health-check",
     "services/optimization",
     "services/allocation-governance",
     "services/managed-finops",
 
-    // Core pages
+    // Core
     "pricing",
     "case-studies",
     "case-studies/saas-scaleup-28-savings",
     "about",
     "contact",
+    "contact/success",
+
+    // Blog
     "blog",
+    "blog/finops-health-check",
 
     // Legal
     "privacy",

@@ -25,14 +25,18 @@ export default function Header() {
         <div className="flex flex-wrap items-center justify-between gap-3 py-3 sm:py-4">
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <Link
-              href="/"
-              className="text-base font-bold tracking-tight text-neutral-900 hover:opacity-90 dark:text-white"
-              aria-label="Zyorix — Home"
-            >
-              Zyorix
+            <Link href="/" aria-label="Zyorix — Home" className="block leading-none">
+              <img
+                src="/zyorix-logo-embedded.svg"   // lives in /public
+                alt="Zyorix FinOps"
+                width={32}
+                height={32}
+                className="block h-8 w-auto md:h-9 align-middle"
+                decoding="async"
+                fetchPriority="high"
+              />
             </Link>
-            <span className="hidden text-xs text-neutral-500 sm:inline dark:text-neutral-400">
+            <span className="hidden select-none text-xs font-medium text-neutral-600 sm:inline dark:text-neutral-300">
               FinOps Consulting
             </span>
           </div>

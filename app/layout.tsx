@@ -31,44 +31,18 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
 };
 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="__className_f367f3">
-        {/* Skip link for accessibility */}
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 rounded bg-blue-700 px-3 py-2 text-white"
-        >
-          Skip to main content
-        </a>
-
-        <header className="site-header">
-          <nav className="container flex items-center justify-between py-4">
-            <a className="text-xl font-bold focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2" href="/">
-              Zyorix
-            </a>
-            <div className="flex gap-6">
-              <a href="/about">About</a>
-              <a href="/services">Services</a>
-              <a href="/case-studies">Case Studies</a>
-              <a href="/pricing">Pricing</a>
-              <a href="/blog">Blog</a>
-              <a href="/contact">Contact</a>
-            </div>
-          </nav>
-        </header>
+        <Header />
 
         {children}
 
-        <footer className="site-footer py-6 text-center text-sm text-gray-500">
-          <p>© 2025 Zyorix. All rights reserved.</p>
-          <p>
-            <a className="underline" href="/privacy">Privacy</a> ·{" "}
-            <a className="underline" href="/legal/cookies">Cookies</a> ·{" "}
-            <a className="underline" href="/terms">Terms</a>
-          </p>
-        </footer>
+        <Footer />
 
         {/* JSON-LD (additive, non-destructive to GA4) */}
         <script

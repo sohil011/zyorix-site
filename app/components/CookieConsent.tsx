@@ -36,7 +36,7 @@ export default function CookieConsent() {
     }
 
     // Consent Mode v2: default deny
-    gtag("consent", "default", {
+    (gtag as any)("consent", "default", {
       ad_user_data: "denied",
       ad_personalization: "denied",
       ad_storage: "denied",
@@ -45,8 +45,8 @@ export default function CookieConsent() {
       security_storage: "granted",
     });
 
-    gtag("js", new Date());
-    gtag("config", GA_ID, { anonymize_ip: true });
+    (gtag as any)("js", new Date());
+    (gtag as any)("config", GA_ID, { anonymize_ip: true });
   }
 
   function accept() {
@@ -61,7 +61,7 @@ export default function CookieConsent() {
       // @ts-ignore
       window.dataLayer.push(arguments);
     }
-    gtag("consent", "update", {
+    (gtag as any)("consent", "update", {
       ad_user_data: "granted",
       ad_personalization: "granted",
       ad_storage: "granted",

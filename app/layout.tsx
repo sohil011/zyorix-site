@@ -1,17 +1,30 @@
 // app/layout.tsx
+import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
+import { Suspense } from "react";
+import GA4Tracker from "./ga4-tracker";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import CookieConsent from "./components/CookieConsent";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Providers from "./providers";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zyorix.com";
 const IS_PROD =
   process.env.VERCEL_ENV === "production" &&
   SITE_URL.includes("zyorix.com");
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   robots: {
     index: IS_PROD,
     follow: IS_PROD,
-    // keeps previews clearly noindex for Googlebot too
     googleBot: {
       index: IS_PROD,
       follow: IS_PROD,
@@ -20,5 +33,76 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  // (keep your existing title/description/openGraph/twitter/json-ld, etc.)
+  title: {
+    default: "Zyorix",
+    template: "%s | Zyorix",
+  },
+  description: "Helping you master cloud costs.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en": "https://zyorix.com",
+    },
+  },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className="bg-white text-gray-900 dark:bg-neutral-950 dark:text-gray-100" suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+      </head>
+      <body>
+        <Providers>
+          <Script id="json-ld-org" type="application/ld+json">
+            {`{
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "Zyorix",
+              "url": "https://zyorix.com",
+              "logo": "https://zyorix.com/zyorix-logo-embedded.svg",
+              "description": "Helping engineering and finance teams master cloud costs across AWS, Azure, and GCP.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "GB"
+              }
+            }`}
+          </Script>
+          {GA_ID && (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                strategy="afterInteractive"
+              />
+              <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_ID}', {
+                    send_page_view: false
+                  });
+                `}
+              </Script>
+            </>
+          )}
+          <Suspense fallback={null}>
+            <GA4Tracker />
+          </Suspense>
+
+          <Header />
+          {children}
+          <Footer />
+          <CookieConsent />
+          <Analytics />
+          <SpeedInsights />
+        </Providers>
+      </body>
+    </html>
+  );
+}

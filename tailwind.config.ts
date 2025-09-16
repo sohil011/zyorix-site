@@ -6,6 +6,7 @@ export default {
     './components/**/*.{ts,tsx}',
     './content/**/*.{md,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

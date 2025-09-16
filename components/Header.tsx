@@ -23,31 +23,31 @@ export default function Header() {
 
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-wrap items-center justify-between gap-3 py-3 sm:py-4">
-          {/* Brand — logo only; 40px height; CLS reserved; dark-mode via invert */}
+          {/* Brand — responsive height (40→48→56), CLS reserved, dark-mode aware */}
           <Link href="/" aria-label="Zyorix — Home" className="block leading-none">
             {/* Light theme */}
             <img
               src="/zyorix-logo-embedded.svg"
               alt="Zyorix"
-              width={220}
-              height={40}
-              className="block h-10 w-auto dark:hidden"
+              width={240}      // reserves space; CSS scales precisely per breakpoint
+              height={56}
+              className="block h-10 w-auto md:h-12 lg:h-14 dark:hidden"
               decoding="async"
               fetchPriority="high"
             />
-            {/* Dark theme (use same SVG but force it to white) */}
+            {/* Dark theme (invert fallback if you don't have a white asset) */}
             <img
               src="/zyorix-logo-embedded.svg"
               alt="Zyorix"
-              width={220}
-              height={40}
-              className="hidden h-10 w-auto brightness-0 invert contrast-125 dark:block"
+              width={240}
+              height={56}
+              className="hidden h-10 w-auto md:h-12 lg:h-14 brightness-0 invert contrast-125 dark:block"
               decoding="async"
               fetchPriority="high"
             />
           </Link>
 
-          {/* Nav */}
+          {/* Primary nav */}
           <nav aria-label="Primary" className="flex flex-wrap items-center gap-1">
             {NAV.map((item) => (
               <Link

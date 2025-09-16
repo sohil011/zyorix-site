@@ -23,26 +23,38 @@ export default function Header() {
 
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-wrap items-center justify-between gap-3 py-3 sm:py-4">
-          {/* Brand — logo only; height locked to 40px; CLS reserved */}
+          {/* Brand — logo only; height hard-locked (40px); dark-mode aware; CLS reserved */}
           <Link href="/" aria-label="Zyorix — Home" className="block leading-none">
+            {/* Light theme */}
             <img
               src="/zyorix-logo-embedded.svg"
               alt="Zyorix"
-              width={200}
+              width={220}                 /* reserve space, improves CLS and desktop presence */
               height={40}
-              className="block h-10 w-auto"
+              className="block h-10 w-auto dark:hidden"
+              decoding="async"
+              fetchPriority="high"
+            />
+            {/* Dark theme (preferred: provide /zyorix-logo-embedded-dark.svg as a white mark).
+                If you don't have it yet, keep the same src and add 'brightness-0 invert' to force white. */}
+            <img
+              src="/zyorix-logo-embedded-dark.svg"
+              alt="Zyorix"
+              width={220}
+              height={40}
+              className="hidden h-10 w-auto dark:block"
               decoding="async"
               fetchPriority="high"
             />
           </Link>
 
-          {/* Nav */}
+          {/* Primary nav */}
           <nav aria-label="Primary" className="flex flex-wrap items-center gap-1">
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white"
+                className="rounded-xl px-3 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white"
               >
                 {item.name}
               </Link>

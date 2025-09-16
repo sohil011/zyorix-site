@@ -1,19 +1,20 @@
-﻿import { NextResponse, type NextRequest } from "next/server";
+﻿@'
+// middleware.ts (repo root)
+import { NextResponse, type NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
   const host = req.headers.get("host") || "";
-  // treat anything that isn’t your production host as a preview
-  const isPreview = !host.endsWith("zyorix.com");
+  const isPreview = !host.endsWith("zyorix.com"); // anything not prod
 
   const res = NextResponse.next();
   if (isPreview) {
-    // belt-and-braces: tell crawlers not to index preview deployments
     res.headers.set("X-Robots-Tag", "noindex, nofollow");
   }
   return res;
 }
 
-// exclude static assets and common files from middleware
 export const config = {
-  matcher: ["/((?!_next|static|favicon.ico|og|api/health|images|public).*)"],
+  // run on all HTML routes; skip static assets/_next
+  matcher: ["/((?!_next|static|favicon.ico|manifest.webmanifest|.*\\.(?:png|jpg|jpeg|svg|gif|webp|css|js|map)$).*)"],
 };
+'@ | Set-Content .\middleware.ts -Encoding utf8

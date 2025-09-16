@@ -23,25 +23,20 @@ export default function Header() {
 
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-wrap items-center justify-between gap-3 py-3 sm:py-4">
-          {/* Brand */}
-          <div className="flex items-center gap-2">
-            <Link href="/" aria-label="Zyorix — Home" className="block leading-none">
-              <img
-                src="/zyorix-logo-embedded.svg"   // lives in /public
-                alt="Zyorix FinOps"
-                width={32}
-                height={32}
-                className="block h-8 w-auto md:h-9 align-middle"
-                decoding="async"
-                fetchPriority="high"
-              />
-            </Link>
-            <span className="hidden select-none text-xs font-medium text-neutral-600 sm:inline dark:text-neutral-300">
-              FinOps Consulting
-            </span>
-          </div>
+          {/* Brand — logo only; height locked to 40px; CLS reserved */}
+          <Link href="/" aria-label="Zyorix — Home" className="block leading-none">
+            <img
+              src="/zyorix-logo-embedded.svg"
+              alt="Zyorix"
+              width={200}
+              height={40}
+              className="block h-10 w-auto"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </Link>
 
-          {/* Nav (wraps on mobile; no JS) */}
+          {/* Nav */}
           <nav aria-label="Primary" className="flex flex-wrap items-center gap-1">
             {NAV.map((item) => (
               <Link

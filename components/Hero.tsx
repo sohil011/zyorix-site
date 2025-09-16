@@ -29,15 +29,25 @@ export default function Hero() {
 
         {/* CTAs (prefetch disabled) */}
         <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
-          <Link prefetch={false}
+          <Link
+            prefetch={false}
             href="/contact"
             className="inline-flex items-center rounded-xl bg-blue-700 px-5 py-3 text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+            aria-label="Book a discovery call"
+            data-ga-event="hero_cta_click"
+            data-ga-ctx="hero"
           >
             Book a discovery call
           </Link>
-          <Link prefetch={false}
+
+          <Link
+            prefetch={false}
             href="/case-studies"
             className="inline-flex items-center rounded-xl border border-gray-300 px-5 py-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+            aria-label="See case studies"
+            data-ga-event="secondary_cta_click"
+            data-ga-dest="case_studies"
+            data-ga-ctx="hero"
           >
             See case studies
           </Link>
@@ -56,6 +66,10 @@ export default function Hero() {
               <a
                 href="/services/health-check"
                 className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+                aria-label="Health Check service"
+                data-ga-event="service_card_click"
+                data-ga-service="health_check"
+                data-ga-ctx="hero_services"
               >
                 <h3 className="font-semibold text-gray-900">Health Check</h3>
                 <p className="mt-1 text-sm text-gray-600">
@@ -66,6 +80,10 @@ export default function Hero() {
               <a
                 href="/services/allocation-governance"
                 className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+                aria-label="Allocation & KPIs service"
+                data-ga-event="service_card_click"
+                data-ga-service="allocation_kpis"
+                data-ga-ctx="hero_services"
               >
                 <h3 className="font-semibold text-gray-900">Allocation & KPIs</h3>
                 <p className="mt-1 text-sm text-gray-600">
@@ -76,6 +94,10 @@ export default function Hero() {
               <a
                 href="/services/optimization"
                 className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+                aria-label="Optimization Sprint service"
+                data-ga-event="service_card_click"
+                data-ga-service="optimization_sprint"
+                data-ga-ctx="hero_services"
               >
                 <h3 className="font-semibold text-gray-900">Optimization Sprint</h3>
                 <p className="mt-1 text-sm text-gray-600">
@@ -84,8 +106,12 @@ export default function Hero() {
               </a>
 
               <a
-                href="/services/managed"
+                href="/services/managed-finops"
                 className="rounded-xl bg-gray-100 p-3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-700 sm:p-4"
+                aria-label="vFinOps service"
+                data-ga-event="service_card_click"
+                data-ga-service="vfinops"
+                data-ga-ctx="hero_services"
               >
                 <h3 className="font-semibold text-gray-900">vFinOps</h3>
                 <p className="mt-1 text-sm text-gray-600">

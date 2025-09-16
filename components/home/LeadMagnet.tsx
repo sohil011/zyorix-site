@@ -7,7 +7,12 @@ export default function LeadMagnet() {
         <p className="mt-2 text-gray-700">
           Get our free FinOps Health Check Template and start optimizing today.
         </p>
-        <form className="mt-6 flex flex-col sm:flex-row gap-3 justify-center" aria-label="Download health check template">
+
+        <form
+          className="mt-6 flex flex-col sm:flex-row gap-3 justify-center"
+          aria-label="Download health check template"
+          noValidate
+        >
           <input
             type="email"
             inputMode="email"
@@ -21,11 +26,18 @@ export default function LeadMagnet() {
             href="/downloads/finops-health-check-template.xlsx"
             download
             className="rounded-md bg-blue-600 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700"
+            aria-label="Download FinOps Health Check Template"
+            data-ga-event="lead_magnet_download"
+            data-ga-asset="finops_health_check_xlsx"
+            data-ga-ctx="lead_magnet"
           >
             Download Free Template
           </a>
         </form>
-        <p className="mt-3 text-xs text-gray-500">We’ll never share your email. One tip per week.</p>
+
+        <p className="mt-3 text-xs text-gray-500" id="privacy-note">
+          We’ll never share your email. One tip per week.
+        </p>
       </div>
     </section>
   );

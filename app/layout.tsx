@@ -53,6 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-white text-gray-900">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
       </head>

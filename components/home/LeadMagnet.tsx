@@ -14,13 +14,15 @@ export default function LeadMagnet() {
             name="email"
             required
             placeholder="you@company.com"
-            className="w-full max-w-xs rounded-md border border-gray-300 px-4 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full max-w-xs rounded-md border border-gray-300 px-4 py-2 text-sm placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             aria-label="Email address"
           />
           <a
             href="/downloads/finops-health-check-template.xlsx"
             download
-            className="rounded-md bg-blue-600 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700"
+            className="rounded-md bg-blue-600 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
+            data-ga-event="cta_click"
+            data-ga-label="leadmagnet_download"
           >
             Download Free Template
           </a>

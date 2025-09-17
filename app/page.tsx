@@ -7,6 +7,7 @@ import LeadMagnet from "@/components/home/LeadMagnet";
 import Outcomes from "@/components/Outcomes";
 import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
+import FinalCTA from "@/components/FinalCTA";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Process />
       <LeadMagnet />
       <FAQ />
+      <FinalCTA />
     </main>
   );
 }

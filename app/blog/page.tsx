@@ -59,7 +59,7 @@ export default function BlogPage() {
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
-        className="mb-6 text-sm text-neutral-600 dark:text-neutral-300"
+        className="mb-6 text-sm text-neutral-600"
       >
         <ol className="flex flex-wrap gap-2">
           <li>
@@ -71,13 +71,13 @@ export default function BlogPage() {
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-neutral-900 dark:text-white">Blog</li>
+          <li className="font-medium text-neutral-900">Blog</li>
         </ol>
       </nav>
 
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Blog</h1>
-        <p className="mt-2 max-w-2xl text-neutral-700 dark:text-neutral-300">
+        <p className="mt-2 max-w-2xl text-neutral-700">
           Insights, case studies, and playbooks to help your team cut cloud
           waste and scale FinOps maturity with confidence.
         </p>
@@ -87,7 +87,7 @@ export default function BlogPage() {
       <ul className="space-y-5">
         {POSTS.map((p) => (
           <li key={p.slug}>
-            <article className="rounded-2xl border border-neutral-200 p-6 transition hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900">
+            <article className="rounded-2xl border border-neutral-200 p-6 transition hover:bg-neutral-50">
               <h2 className="text-xl font-semibold">
                 <Link
                   href={`/blog/${p.slug}`}
@@ -96,10 +96,10 @@ export default function BlogPage() {
                   {p.title}
                 </Link>
               </h2>
-              <p className="mt-2 text-neutral-700 dark:text-neutral-300">
+              <p className="mt-2 text-neutral-700">
                 {p.description}
               </p>
-              <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+              <p className="mt-2 text-sm text-neutral-500">
                 <time dateTime={p.date}>
                   {new Date(p.date).toLocaleDateString("en-GB", {
                     day: "2-digit",
@@ -112,7 +112,7 @@ export default function BlogPage() {
               <div className="mt-3">
                 <Link
                   href={`/blog/${p.slug}`}
-                  className="inline-flex items-center rounded-xl border border-neutral-300 px-3 py-1.5 text-sm font-medium hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-neutral-700 dark:hover:bg-neutral-800"
+                  className="inline-flex items-center rounded-xl border border-neutral-300 px-3 py-1.5 text-sm font-medium hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                   aria-label={`Read: ${p.title}`}
                 >
                   Read post

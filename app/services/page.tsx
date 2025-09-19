@@ -69,8 +69,7 @@ export default function ServicesPage() {
       <header className="mb-8 sm:mb-12">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">FinOps Services</h1>
         <p className="mt-3 max-w-3xl text-neutral-700 dark:text-neutral-300">
-          Cut 20–40% cloud waste, align spend to value, and operationalize FinOps.
-          Choose a rapid assessment, a focused optimization sprint, or ongoing managed cadence—each with clear deliverables.
+          Choose the engagement model that fits: one-off assessments, coaching, managed FinOps, or on-call support.
         </p>
       </header>
 
@@ -112,13 +111,61 @@ export default function ServicesPage() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                aria-label={`Book a call about ${s.name}`}
+                aria-label={`Book a discovery call about ${s.name}`}
               >
-                {`Book a call — ${s.name}`}
+                {`Book a discovery call — ${s.name}`}
               </Link>
             </div>
           </article>
         ))}
+      </section>
+
+      {/* Comparison Table */}
+      <section aria-labelledby="comparison-title" className="mt-12">
+        <h2 id="comparison-title" className="text-xl font-semibold text-center mb-6">Engagement Comparison</h2>
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <table className="min-w-full divide-y divide-neutral-200 dark:divide-neutral-800">
+            <thead className="bg-neutral-50 dark:bg-neutral-900">
+              <tr>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider dark:text-neutral-400"></th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider dark:text-neutral-400">Assessment</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider dark:text-neutral-400">Sprint</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider dark:text-neutral-400">Managed</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider dark:text-neutral-400">On-call</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-neutral-200 dark:bg-neutral-800 dark:divide-neutral-700">
+              <tr className="dark:bg-neutral-800/50">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">Duration</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">2–3 weeks</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">4–8 weeks</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Monthly</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Hourly/Blocks</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">Team Effort</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Low</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Medium</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Medium</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Low</td>
+              </tr>
+              <tr className="dark:bg-neutral-800/50">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">Typical Deliverables</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Findings deck + backlog</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">PRs + tracker</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">KPI pack + governance</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">Advisory</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">Cost Profile</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">£5k–£10k</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">£8k–£15k</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">from £3k/mo</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-300">from £250/hr</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       {/* CTA */}

@@ -35,8 +35,22 @@ export default function Page() {
         </ul>
       </section>
 
+      <section className="mt-8 space-y-4">
+        <h2 className="text-xl font-semibold">How this engagement works</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Inputs:</strong> Monthly cadence; access to billing and tagging; stakeholders (Finance, Eng, DevOps).</li>
+          <li><strong>Actions:</strong> Monthly runbook; savings backlog grooming; forecast and budgets; anomaly triage; executive reporting; enablement.</li>
+          <li><strong>Deliverables:</strong> Monthly KPI pack; variance analysis; optimization tickets; quarterly strategy review.</li>
+          <li><strong>Results:</strong> Sustained savings &gt;20% YoY; variance within ±10% forecast; tag coverage &gt;90%.</li>
+        </ul>
+      </section>
+
+      <p className="mt-8 text-sm text-neutral-600 dark:text-neutral-400">
+        New to FinOps? Start with a <Link href="/services/health-check" className="underline hover:no-underline">Health Check</Link>.
+      </p>
+
       <div className="mt-8 flex gap-4">
-        <Link href="/contact" className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book a call</Link>
+        <Link href="/contact" className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book a discovery call</Link>
         <Link href="/services" className="rounded-xl border px-4 py-2 text-sm">Back to Services</Link>
       </div>
     </main>

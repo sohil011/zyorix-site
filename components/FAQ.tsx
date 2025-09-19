@@ -8,8 +8,24 @@ const QA = [
 ];
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: QA.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
   return (
     <section aria-labelledby="faq-title" className="py-10 md:py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="mx-auto max-w-6xl px-4">
         <h2 id="faq-title" className="text-xl font-semibold text-neutral-900 dark:text-white text-center">FAQ</h2>
         <div className="mt-6 divide-y divide-neutral-200 dark:divide-neutral-800 rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur dark:border-neutral-800">

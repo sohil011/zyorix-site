@@ -36,8 +36,22 @@ export default function Page() {
         </ul>
       </section>
 
+      <section className="mt-8 space-y-4">
+        <h2 className="text-xl font-semibold">How this engagement works</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Inputs:</strong> Last 60–90 days CUR/Exports; tagging map; budgets and anomaly settings; key accounts and services; target % save; constraints.</li>
+          <li><strong>Actions:</strong> Baseline by service/account/owner; tag coverage; idle/under-used discovery; quick-wins; risk and blast-radius checks; governance gaps.</li>
+          <li><strong>Deliverables:</strong> Findings deck; prioritized backlog (now/next/later); 2-week action plan; KPI sheet (coverage %, unit cost, alerting).</li>
+          <li><strong>Results:</strong> Typical 15–25% addressable savings identified; tag coverage ↑ to 80–95%; anomaly MTTR ↓ to &lt;24h.</li>
+        </ul>
+      </section>
+
+      <p className="mt-8 text-sm text-neutral-600 dark:text-neutral-400">
+        Often uncovers idle storage and over-provisioning — see <Link href="/services/optimization" className="underline hover:no-underline">Optimisation Sprint</Link>.
+      </p>
+
       <div className="mt-8 flex gap-4">
-        <Link href="/contact" className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book a call</Link>
+        <Link href="/contact" className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book a discovery call</Link>
         <Link href="/services" className="rounded-xl border px-4 py-2 text-sm">Back to Services</Link>
       </div>
     </main>

@@ -1,7 +1,7 @@
-// app/case-studies/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import LabExamples from "./LabExamples";
 
 export const metadata: Metadata = {
   title: "Case Studies | Zyorix — FinOps Outcomes",
@@ -57,8 +57,7 @@ export default function CaseStudiesPage() {
       <header className="mb-8 sm:mb-12">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Case Studies</h1>
         <p className="mt-3 max-w-3xl text-neutral-700 dark:text-neutral-300">
-          Measurable outcomes from Health Checks, Optimization Sprints, and Managed FinOps. Each story details the approach,
-          actions, and impact.
+          These case studies are based on real FinOps lab work and anonymised scenarios to demonstrate typical savings and methods. Client-specific case studies will be published as partnerships grow.
         </p>
       </header>
 
@@ -92,19 +91,23 @@ export default function CaseStudiesPage() {
                 className="inline-flex items-center justify-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-neutral-700 dark:hover:bg-neutral-800"
                 aria-label={`Read case study: ${c.title}`}
               >
-                Read case study — {c.title}
+                {`Read case study — ${c.title}`}
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 aria-label={`Book a call to discuss: ${c.title}`}
               >
-                Book a call
+                Book a discovery call
               </Link>
             </div>
           </article>
         ))}
       </section>
+
+      <LabExamples />
+
+      {/* future: client logos/testimonials here */}
 
       <section aria-labelledby="cta-heading" className="mt-12 rounded-2xl border border-blue-100 bg-blue-50 p-6 dark:border-blue-900/40 dark:bg-blue-950/30">
         <h2 id="cta-heading" className="text-lg font-semibold">Want similar results?</h2>

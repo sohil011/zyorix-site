@@ -18,6 +18,10 @@ export default function Hero() {
           Cut <span className="text-blue-700 dark:text-blue-400">15–35%</span> cloud spend in 6 weeks — no new tools.
         </h1>
 
+        <p className="mt-6 max-w-3xl text-lg text-gray-800 sm:text-xl dark:text-gray-200">
+          For SaaS and digital-first businesses spending £50k+ monthly on AWS, Azure, or GCP.
+        </p>
+
         {/* Subcopy */}
         <p className="mt-5 max-w-2xl text-base text-gray-700 sm:text-lg dark:text-gray-300">
           Zyorix helps engineering and finance teams reduce cloud waste, improve allocation, and

@@ -35,8 +35,22 @@ export default function Page() {
         </ul>
       </section>
 
+      <section className="mt-8 space-y-4">
+        <h2 className="text-xl font-semibold">How this engagement works</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Inputs:</strong> Chart of accounts; cost centers; project taxonomy; env/owner tags.</li>
+          <li><strong>Actions:</strong> Normalize keys; activate cost allocation tags; backfill where possible; UNTAGGED report; showback/chargeback pilot.</li>
+          <li><strong>Deliverables:</strong> Allocation policy; dashboard; coverage reports; data dictionary.</li>
+          <li><strong>Results:</strong> Allocated spend &gt;90%; UNTAGGED &lt;10%; reduced disputes; clearer ownership.</li>
+        </ul>
+      </section>
+
+      <p className="mt-8 text-sm text-neutral-600 dark:text-neutral-400">
+        Allocation clarity accelerates <Link href="/services/optimization" className="underline hover:no-underline">Optimization decisions</Link>.
+      </p>
+
       <div className="mt-8 flex gap-4">
-        <Link href="/contact" className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book a call</Link>
+        <Link href="/contact" className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Book a discovery call</Link>
         <Link href="/services" className="rounded-xl border px-4 py-2 text-sm">Back to Services</Link>
       </div>
     </main>

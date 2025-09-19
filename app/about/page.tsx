@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Zyorix — FinOps Consulting",
@@ -18,6 +19,41 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
 };
+
+const certifications = [
+  {
+    src: "/img/certs/finops-focus-analyst-sohil-bhayani.jpg",
+    alt: "FinOps Certified FOCUS Analyst — Certificate, Sohil Bhayani",
+    caption: "Verify",
+    href: "https://verify.skilljar.com/c/qhgq45czb2p2",
+    width: 1200,
+    height: 927,
+  },
+  {
+    src: "/img/certs/focp-sohil-bhayani.png",
+    alt: "FinOps Certified Practitioner (FOCP) — Certificate, Sohil Bhayani",
+    caption: "Download",
+    href: "/img/certs/focp-sohil-bhayani.pdf",
+    width: 1200,
+    height: 927,
+  },
+  {
+    src: "/img/certs/coursera-cloud-finops-specialization.png",
+    alt: "Coursera Cloud FinOps Specialization — Certificate, Sohil Bhayani",
+    caption: "Verify",
+    href: "https://coursera.org/verify/specialization/ZTVD4PGP0SCP",
+    width: 1200,
+    height: 927,
+  },
+  {
+    src: "/img/certs/aws-cost-explorer-completion.png",
+    alt: "AWS Cost Explorer — Completion Certificate, Sohil",
+    caption: "View",
+    href: "/img/certs/aws-cost-explorer-completion.pdf",
+    width: 1200,
+    height: 927,
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -55,6 +91,38 @@ export default function AboutPage() {
           KPIs and guardrails.
         </p>
       </header>
+
+      {/* Founder Bio */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold">Founder</h2>
+        <p className="mt-4 text-neutral-700 dark:text-neutral-300">
+          Sohil Bhayani — FinOps Certified Practitioner (FOCP) and FinOps Certified FOCUS Analyst. Founder of Zyorix, with hands-on expertise in AWS cost optimisation, Azure/GCP labs, and cloud financial governance. Coursera Cloud FinOps Specialization and AWS Cost Explorer completion reinforce practical, tool-level proficiency.
+        </p>
+      </section>
+
+      {/* Certifications */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-center">Certifications</h2>
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {certifications.map((cert) => (
+            <figure key={cert.alt} className="text-center">
+              <Image
+                src={cert.src}
+                alt={cert.alt}
+                width={cert.width}
+                height={cert.height}
+                loading="lazy"
+                className="grayscale transition hover:grayscale-0"
+              />
+              <figcaption className="mt-4 text-sm">
+                <a href={cert.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  {cert.caption}
+                </a>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
 
       {/* 3-up value props */}
       <section
@@ -142,9 +210,9 @@ export default function AboutPage() {
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            aria-label="Book a call with Zyorix"
+            aria-label="Book a discovery call with Zyorix"
           >
-            Book a call
+            Book a discovery call
           </Link>
           <Link
             href="/services"

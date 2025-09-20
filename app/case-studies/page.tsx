@@ -26,6 +26,9 @@ const studies = [
     summary:
       "Rightsizing + commitment strategy + storage tiering. Baseline to backlog, then sprint delivery.",
     tags: ["AWS", "EC2/EKS", "SP/RI", "Storage tiering"],
+    challenge: "A fast-growing SaaS company was struggling with rising cloud costs that were outpacing revenue growth. They needed to quickly gain control of their spend without slowing down their development velocity.",
+    actions: "We conducted a FinOps Health Check to baseline their environment, identifying significant opportunities in rightsizing and storage optimization. We then launched a 60-day optimization sprint to implement these changes.",
+    results: "Achieved a 28% reduction in monthly cloud spend, with a clear path to 35%+. Implemented cost guardrails to prevent future waste.",
   },
   {
     title: "FinServ: Allocation you can trust",
@@ -33,6 +36,9 @@ const studies = [
     summary:
       "Tagging standards, showback, unit economics, and anomaly response raising coverage to 92%.",
     tags: ["Tags", "Showback", "Unit economics"],
+    challenge: "A financial services firm needed to improve their cost allocation to meet regulatory requirements and gain a deeper understanding of their product profitability. Their existing tagging was inconsistent and incomplete.",
+    actions: "We developed a new tagging strategy and worked with their engineering teams to implement it. We also built a series of showback dashboards to provide visibility into costs for each business unit.",
+    results: "Increased tag coverage from 40% to 92% in 90 days. Enabled accurate showback and chargeback, and provided the data needed for unit cost analysis.",
   },
   {
     title: "Data platform: Managed FinOps cadence",
@@ -40,6 +46,9 @@ const studies = [
     summary:
       "Monthly KPI pack, anomaly ops, and rolling optimization backlog keeping spend aligned to value.",
     tags: ["Managed FinOps", "KPIs", "Anomalies"],
+    challenge: "A data platform company wanted to maintain their FinOps momentum after a successful optimization project, but lacked the internal resources to manage the ongoing process.",
+    actions: "We established a managed FinOps service, providing a monthly cadence of KPI reporting, anomaly detection, and backlog management. We worked as an extension of their team to drive continuous improvement.",
+    results: "Maintained a flat cloud spend despite a 20% increase in usage. Embedded a culture of cost awareness across the organization.",
   },
 ];
 
@@ -57,11 +66,11 @@ export default function CaseStudiesPage() {
       <header className="mb-8 sm:mb-12">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Case Studies</h1>
         <p className="mt-3 max-w-3xl text-neutral-700 dark:text-neutral-300">
-          Measurable outcomes from Health Checks, Optimization Sprints, and Managed FinOps. Each story details the approach,
-          actions, and impact.
+          Here are some examples of our work.
         </p>
       </header>
 
+      {/* future: client logos/testimonials here */}
       <section aria-labelledby="studies-heading" className="grid grid-cols-1 gap-6 sm:grid-cols-3">
         <h2 id="studies-heading" className="sr-only">Customer stories</h2>
         {studies.map((c) => (
@@ -78,14 +87,11 @@ export default function CaseStudiesPage() {
                 {c.title}
               </Link>
             </h3>
-            <p className="mt-3 text-neutral-700 dark:text-neutral-300">{c.summary}</p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {c.tags.map((t) => (
-                <li key={t} className="rounded-full border border-neutral-300 px-3 py-1 text-sm dark:border-neutral-700">
-                  {t}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-4 space-y-2">
+                <p><strong>Challenge:</strong> {c.challenge}</p>
+                <p><strong>Actions:</strong> {c.actions}</p>
+                <p><strong>Results:</strong> {c.results}</p>
+            </div>
             <div className="mt-6 flex items-center gap-4">
               <Link
                 href={`/case-studies/${c.slug}`}

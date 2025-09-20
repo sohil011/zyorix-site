@@ -102,6 +102,10 @@ export default function TermsPage() {
         Questions? Email <a href="mailto:info@zyorix.com">info@zyorix.com</a> or use our <Link href="/contact">Contact</Link> page.
       </p>
 
+      <hr />
+
+      <p><strong>Independence Disclaimer:</strong> Zyorix is an independent FinOps consultancy. We do not resell cloud services; all optimisation work is advisory.</p>
+
       <Script id="ld-terms" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",

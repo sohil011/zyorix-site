@@ -97,6 +97,8 @@ Guardrail: Alert if gp3 price > gp2 by 15% on any account`}</pre>
         </p>
       </article>
 
+      <p className="mt-8">To empower your engineers to own their costs, see our <Link href="/blog/finops-for-engineering-leads">guide for engineering leaders</Link>.</p>
+
       {/* JSON-LD: Breadcrumb + Article */}
       <Script id="ld-hc-90-plan-breadcrumb" type="application/ld+json">
         {JSON.stringify({

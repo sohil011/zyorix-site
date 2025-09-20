@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Zyorix — FinOps Consulting",
@@ -118,6 +119,39 @@ export default function AboutPage() {
             <li>Backlog items delivered in your tools.</li>
           </ul>
         </article>
+      </section>
+
+      {/* Founder & Certs */}
+      <section aria-labelledby="founder-heading" className="mt-12 sm:mt-14">
+        <h2 id="founder-heading" className="text-2xl font-bold tracking-tight sm:text-3xl text-center">
+          Founder &amp; Certifications
+        </h2>
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <figure className="flex flex-col items-center justify-center rounded-2xl border p-6 shadow-sm text-center dark:border-neutral-800 dark:bg-neutral-900/40">
+                <Image src="/img/certs/finops-focus-analyst-sohil-bhayani.jpg" alt="FinOps Certified FOCUS Analyst — Certificate, Sohil Bhayani" width={200} height={200} loading="lazy" />
+                <figcaption className="mt-4 text-sm">
+                    <a href="https://verify.skilljar.com/c/qhgq45czb2p2" className="underline hover:no-underline" aria-label="Verify FinOps Certified FOCUS Analyst certificate for Sohil Bhayani">Verify</a>
+                </figcaption>
+            </figure>
+            <figure className="flex flex-col items-center justify-center rounded-2xl border p-6 shadow-sm text-center dark:border-neutral-800 dark:bg-neutral-900/40">
+                <h3 className="text-lg font-semibold">FOCP</h3>
+                <figcaption className="mt-4 text-sm">
+                    <a href="/img/certs/focp-sohil-bhayani.pdf" className="underline hover:no-underline" aria-label="Download FOCP certificate for Sohil Bhayani">Download</a>
+                </figcaption>
+            </figure>
+            <figure className="flex flex-col items-center justify-center rounded-2xl border p-6 shadow-sm text-center dark:border-neutral-800 dark:bg-neutral-900/40">
+                <h3 className="text-lg font-semibold">Coursera Cloud FinOps</h3>
+                <figcaption className="mt-4 text-sm">
+                    <a href="/img/certs/coursera-cloud-finops-specialization.pdf" className="underline hover:no-underline" aria-label="Verify Coursera Cloud FinOps Specialization certificate">Verify</a>
+                </figcaption>
+            </figure>
+            <figure className="flex flex-col items-center justify-center rounded-2xl border p-6 shadow-sm text-center dark:border-neutral-800 dark:bg-neutral-900/40">
+                <h3 className="text-lg font-semibold">AWS Cost Explorer</h3>
+                <figcaption className="mt-4 text-sm">
+                    <a href="/img/certs/aws-cost-explorer-completion.pdf" className="underline hover:no-underline" aria-label="View AWS Cost Explorer completion certificate">View</a>
+                </figcaption>
+            </figure>
+        </div>
       </section>
 
       {/* CTA */}

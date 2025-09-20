@@ -1,23 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
-
-export function ThemeToggle() {
-  const { theme, setTheme, systemTheme } = useTheme();
-  const current = theme === "system" ? systemTheme : theme;
-  const next = current === "dark" ? "light" : "dark";
-  return (
-    <button
-      type="button"
-      aria-label={`Switch to ${next} mode`}
-      onClick={() => setTheme(next!)}
-      className="rounded-xl border px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-    >
-      {current === "dark" ? "Light" : "Dark"}
-    </button>
-  );
-}
 
 const NAV = [
   { name: "Services", href: "/services" },
@@ -64,7 +47,6 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
-            <ThemeToggle />
           </div>
         </div>
       </div>

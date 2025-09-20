@@ -27,13 +27,40 @@ export default function Page() {
         In 2–3 weeks we baseline spend, tagging, KPIs and anomalies, then deliver a prioritized savings plan with confidence scores.
       </p>
 
-      <section className="mt-8 space-y-4">
-        <h2 className="text-xl font-semibold">Deliverables</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>Findings deck + KPI snapshot</li>
-          <li>Top 10 savings with % impact & confidence</li>
-          <li>30/60/90 optimization plan</li>
-        </ul>
+      <section className="mt-8 space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold">Inputs</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Read-only access to cloud billing and usage data (e.g., AWS CUR, Azure EA).</li>
+            <li>List of key stakeholders in engineering and finance.</li>
+            <li>Overview of existing cost management tools and processes.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Actions</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Analyze spend patterns and build a cost allocation model.</li>
+            <li>Identify top 10-15 optimization opportunities (rightsizing, idle assets, purchase plans).</li>
+            <li>Benchmark KPIs against industry standards.</li>
+            <li>Develop a 30/60/90 day prioritized action plan.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Deliverables</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Comprehensive findings deck with KPI dashboard.</li>
+            <li>Prioritized backlog of savings opportunities with impact and confidence scores.</li>
+            <li>30/60/90 day roadmap with clear owners and timelines.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Results</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Clear visibility into current cloud spend and cost drivers.</li>
+            <li>Actionable plan to achieve 15-35% in annualized savings.</li>
+            <li>Alignment between engineering and finance on cost management priorities.</li>
+          </ul>
+        </div>
       </section>
 
       <div className="mt-8 flex gap-4">

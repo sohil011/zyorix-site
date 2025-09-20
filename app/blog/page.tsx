@@ -28,6 +28,30 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: "what-is-finops",
+    title: "What is FinOps? A Practical Guide for Engineers and Leaders",
+    description:
+      "A primer on the FinOps framework, lifecycle, and core principles for managing cloud costs effectively.",
+    date: "2025-09-18",
+    reading: "8 min read",
+  },
+  {
+    slug: "finops-for-cfos",
+    title: "FinOps for CFOs: A Finance Leader’s Guide to Cloud Value",
+    description:
+      "How to translate cloud cost data into financial KPIs, improve forecasting, and build a culture of accountability.",
+    date: "2025-09-17",
+    reading: "7 min read",
+  },
+  {
+    slug: "finops-for-engineering-leads",
+    title: "FinOps for Engineering Leads: Empowering Teams to Own Their Costs",
+    description:
+      "Practical strategies for integrating cost awareness into the development lifecycle without slowing down innovation.",
+    date: "2025-09-16",
+    reading: "9 min read",
+  },
+  {
     slug: "finops-health-check",
     title: "Why a FinOps Health Check is Your Best First Step",
     description:

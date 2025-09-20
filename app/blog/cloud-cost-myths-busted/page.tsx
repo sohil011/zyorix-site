@@ -92,6 +92,8 @@ export default function Post() {
         </p>
       </article>
 
+      <p className="mt-8">For a CFO&apos;s perspective on cloud value, see our <Link href="/blog/finops-for-cfos">guide for finance leaders</Link>.</p>
+
       {/* JSON-LD: Breadcrumb + Article */}
       <Script id="ld-myths-breadcrumb" type="application/ld+json">
         {JSON.stringify({

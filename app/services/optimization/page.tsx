@@ -26,14 +26,40 @@ export default function Page() {
         A focused sprint to reduce waste across compute, storage and data—plus smart purchase strategy and guardrails.
       </p>
 
-      <section className="mt-8 space-y-2">
-        <h2 className="text-xl font-semibold">Focus Areas</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>EC2/VM rightsizing, schedules</li>
-          <li>EBS/S3/Blob tiers and lifecycle</li>
-          <li>SP/RI/Commitment strategy</li>
-          <li>Guardrails and alerts</li>
-        </ul>
+      <section className="mt-8 space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold">Inputs</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Prioritized list of optimization targets from Health Check or internal analysis.</li>
+            <li>Access to performance monitoring tools (e.g., CloudWatch, Datadog).</li>
+            <li>Defined success metrics (e.g., target % savings, specific services to address).</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Actions</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Execute rightsizing plans for compute and database resources.</li>
+            <li>Implement storage lifecycle policies and tiering strategies.</li>
+            <li>Model and purchase Savings Plans, RIs, or other commitments.</li>
+            <li>Deploy cost control guardrails and anomaly alerts.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Deliverables</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Pull Requests or change sets implementing optimizations.</li>
+            <li>Savings tracker to measure realized vs. forecast impact.</li>
+            <li>Updated documentation on new purchase plans and guardrails.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Results</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Measurable reduction in cloud spend within the sprint period.</li>
+            <li>Increased efficiency and performance of targeted workloads.</li>
+            <li>Long-term savings locked in through commitments and automated policies.</li>
+          </ul>
+        </div>
       </section>
 
       <div className="mt-8 flex gap-4">

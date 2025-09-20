@@ -52,12 +52,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-white text-gray-900 dark:bg-neutral-950 dark:text-gray-100" suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+        <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body>
+        <Script id="force-light" strategy="beforeInteractive">{`
+  try {
+    const r = document.documentElement;
+    r.dataset.theme = 'light';
+    r.classList.remove('dark');
+    localStorage.setItem('theme','light');
+  } catch(e) {}
+`}</Script>
         <Providers>
           <Script id="json-ld-org" type="application/ld+json">
             {`{

@@ -5,6 +5,8 @@
 :root {
   --pad: env(safe-area-inset-bottom);
 }
+:root{ color-scheme: light; }
+html,body{ background-color:#fff; }
 .pad-safe {
   padding-bottom: max(1rem, var(--pad));
 }

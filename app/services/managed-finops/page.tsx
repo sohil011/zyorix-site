@@ -26,13 +26,40 @@ export default function Page() {
         We operate FinOps as a service: KPIs, reviews, optimization backlog and exec reporting—continuously.
       </p>
 
-      <section className="mt-8 space-y-2">
-        <h2 className="text-xl font-semibold">Cadence</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>Monthly KPI pack + anomaly review</li>
-          <li>Optimization backlog grooming & delivery</li>
-          <li>Executive summary & roadmap updates</li>
-        </ul>
+      <section className="mt-8 space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold">Inputs</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Defined FinOps goals and success metrics.</li>
+            <li>Access to your cloud and observability tools.</li>
+            <li>Integration with your ticketing system (e.g., Jira, Asana).</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Actions</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Conduct monthly business reviews to track KPIs and progress.</li>
+            <li>Continuously identify and prioritize new optimization opportunities.</li>
+            <li>Manage the optimization backlog and coordinate implementation with engineering teams.</li>
+            <li>Provide executive-level reporting on a regular cadence.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Deliverables</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Monthly KPI pack and performance analysis.</li>
+            <li>A managed backlog of optimization tasks.</li>
+            <li>Regular executive summaries and roadmap updates.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Results</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>A mature and scalable FinOps practice without the need for a large in-house team.</li>
+            <li>Continuous improvement in cloud cost efficiency and value.</li>
+            <li>Stronger alignment between finance, engineering, and business leadership.</li>
+          </ul>
+        </div>
       </section>
 
       <div className="mt-8 flex gap-4">

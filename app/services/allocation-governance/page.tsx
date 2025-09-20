@@ -26,13 +26,42 @@ export default function Page() {
         Build trustworthy allocation with consistent tags, showback/chargeback, budgets and anomaly ops.
       </p>
 
-      <section className="mt-8 space-y-2">
-        <h2 className="text-xl font-semibold">What we implement</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>Tag/label standards + coverage tracking</li>
-          <li>Showback/chargeback & unit economics</li>
-          <li>Budgets, alerts and anomaly response</li>
-        </ul>
+      <section className="mt-8 space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold">Inputs</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Existing tagging or labeling policy documentation.</li>
+            <li>List of business units, cost centers, and product lines for showback.</li>
+            <li>Access to key stakeholders for defining requirements.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Actions</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Develop and document a comprehensive tagging strategy.</li>
+            <li>Implement tools and processes for tracking tag coverage.</li>
+            <li>Build showback/chargeback dashboards and reports.</li>
+            <li>Configure budgets, alerts, and anomaly detection thresholds.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Deliverables</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>A formal tagging policy document and implementation guide.</li>
+            <li>Automated reports for tracking tag coverage and compliance.</li>
+            <li>Dashboards for showback/chargeback tailored to business units.</li>
+            <li>A runbook for handling budget alerts and cost anomalies.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Results</h2>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li>Improved cost allocation accuracy and accountability.</li>
+            <li>Empowered teams with visibility into their own spend.</li>
+            <li>Proactive cost control through automated alerts and governance.</li>
+            <li>A solid foundation for calculating unit economics.</li>
+          </ul>
+        </div>
       </section>
 
       <div className="mt-8 flex gap-4">

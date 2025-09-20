@@ -75,6 +75,8 @@ export default function ArticlePage() {
         </Link>
       </div>
 
+      <p className="mt-8">For a complete overview of FinOps, see our <Link href="/blog/what-is-finops">complete guide to FinOps</Link>.</p>
+
       <Script id="ld-article" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",

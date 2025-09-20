@@ -68,6 +68,7 @@ export default function ServicesPage() {
 
       <header className="mb-8 sm:mb-12">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">FinOps Services</h1>
+        <p className="mt-2 text-lg text-neutral-700 dark:text-neutral-300">A suite of services to help you manage and optimize your cloud spend.</p>
         <p className="mt-3 max-w-3xl text-neutral-700 dark:text-neutral-300">
           Cut 20–40% cloud waste, align spend to value, and operationalize FinOps.
           Choose a rapid assessment, a focused optimization sprint, or ongoing managed cadence—each with clear deliverables.
@@ -119,6 +120,54 @@ export default function ServicesPage() {
             </div>
           </article>
         ))}
+      </section>
+
+      {/* Comparison Table */}
+      <section aria-labelledby="comparison-heading" className="mt-12 sm:mt-14">
+        <h2 id="comparison-heading" className="text-2xl font-bold tracking-tight text-center">Service Comparison</h2>
+        <div className="mt-8 overflow-x-auto">
+          <table className="min-w-full divide-y divide-neutral-200 dark:divide-neutral-800">
+            <thead className="bg-neutral-50 dark:bg-neutral-900">
+              <tr>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">Engagement</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">Timeline</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">Effort</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">Deliverables</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">Indicative Pricing</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-neutral-200 dark:bg-neutral-950 dark:divide-neutral-800">
+              <tr>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">Assessment</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">2–3 weeks</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Low</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Findings deck + backlog</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">£5k–£10k</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">Sprint</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">4–8 weeks</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Medium</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">PRs + tracker</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">£8k–£15k</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">Managed</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Monthly</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Medium</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">KPI pack + governance</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">from £3k/mo</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-white">On-call</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Hourly/Blocks</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Low</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">Advisory</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 dark:text-neutral-300">from £250/hr</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       {/* CTA */}
